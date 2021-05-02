@@ -1,4 +1,4 @@
-name: 0414京东直播
+name: 京东直播
 
 on:
     workflow_dispatch:
