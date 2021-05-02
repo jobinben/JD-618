@@ -1,4 +1,4 @@
-name: jd_beauty美丽研究院
+name: 美丽研究院
 
 on:
   workflow_dispatch:
