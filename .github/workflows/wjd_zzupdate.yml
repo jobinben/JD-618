@@ -1,4 +1,4 @@
-name: jd_zzupdate1
+name: 京东心愿单
 
 on:
   workflow_dispatch:
