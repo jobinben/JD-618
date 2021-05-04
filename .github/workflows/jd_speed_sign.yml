@@ -3,7 +3,7 @@ name: jd_speed_sign急速版签到及红包
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 16 * * *'
+    - cron: '0 23,7,15 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
