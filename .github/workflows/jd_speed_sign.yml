@@ -8,9 +8,9 @@ on:
   schedule:
     - cron: '10 16,0,8 * * *'
   watch:
-    types: started
+    types: [started]
   repository_dispatch:
-    types: fruit
+    types: jd_speed_sign.js
 jobs:
   build:
 
