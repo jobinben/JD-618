@@ -4,7 +4,7 @@ name: 赚京豆
 on:
   workflow_dispatch:
   schedule:
-    - cron: '50 12 * * *'
+    - cron: '50 12,13 * * *'
   repository_dispatch:
     types: jd_syj
 jobs:
