@@ -47,4 +47,4 @@ jobs:
                   QYWX_AM: ${{ github.event.client_payload.QYWX_AM || secrets.QYWX_AM }}
                   PUSH_PLUS_TOKEN: ${{ github.event.client_payload.PUSH_PLUS_TOKEN || secrets.PUSH_PLUS_TOKEN }}
                   PUSH_PLUS_USER: ${{ github.event.client_payload.PUSH_PLUS_USER || secrets.PUSH_PLUS_USER }}
-                  SYNCURL: https://github.com/inoyna11/MyActions/raw/main/jd_speed_sign.js
+                  SYNCURL: https://github.com/inoyna11/MyActions/raw/master/jd_speed_sign.js
