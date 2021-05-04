@@ -1,26 +1,19 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: 京东极速版
+name: jd_speed_sign急速版签到及红包
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 23 * * *'
-  watch:
-    types: started
-  repository_dispatch:
-    types: speed_sign
+    - cron: '0 16 * * *'
 jobs:
   build:
-
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: inoyna11/jd28
+          repository: hajiuhajiu/jdsign1112
+          ref: master
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -35,9 +28,11 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【京东极速版签到+赚现金任务】'
+      - name: '运行'
         run: |
           node jd_speed_sign.js
+          sleep 1m
+          node jd_speed_redpocke.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
@@ -49,4 +44,3 @@ jobs:
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
-          QYWX_AM: ${{ secrets.QYWX_AM }}
