@@ -11,6 +11,8 @@ const Secrets = {
     BARK_PUSH: process.env.BARK_PUSH, //Bark推送
     TG_BOT_TOKEN: process.env.TG_BOT_TOKEN, //TGBot推送Token
     TG_USER_ID: process.env.TG_USER_ID, //TGBot推送成员ID
+    PUSH_PLUS_TOKEN: process.env.PUSH_PLUS_TOKEN, //push+
+    PUSH_PLUS_USER: process.env.PUSH_PLUS_USER, //push+群组
 };
 let CookieJDs = [];
 
