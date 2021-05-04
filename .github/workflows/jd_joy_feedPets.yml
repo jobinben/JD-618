@@ -10,7 +10,7 @@ on:
   watch:
     types: [started]
   repository_dispatch:
-    types: joy_feedPets
+    types: joy_feedPets.js
 jobs:
   build:
 
