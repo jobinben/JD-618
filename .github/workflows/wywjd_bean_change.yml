@@ -5,7 +5,7 @@ name: 昨日收益/价保保护
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '0 17 * * *'
   watch:
     types: started
   repository_dispatch:
