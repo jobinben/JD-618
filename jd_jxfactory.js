@@ -100,7 +100,7 @@ if ($.isNode()) {
         continue
       }
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
-      if ((cookiesArr && cookiesArr.length >= ($.tuanNum || 1)) && $.canHelp) {
+      if ((cookiesArr && cookiesArr.length >= ($.tuanNum || 6)) && $.canHelp) {
         console.log(`\n账号${$.UserName} 内部相互进团\n`);
         for (let item of $.tuanIds) {
           console.log(`\n${$.UserName} 去参加团 ${item}`);
