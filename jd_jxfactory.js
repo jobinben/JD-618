@@ -39,7 +39,7 @@ const helpAuthor = false; //帮助力 免费拿活动
 const notify = $.isNode() ? require('./sendNotify') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
 const randomCount = $.isNode() ? 20 : 5;
-let tuanActiveId = `0_pzMedR7KhclCkMIgkTkg==`;
+let tuanActiveId = `mNGPTrOPluOSeZcupPI40w==`;
 const jxOpenUrl = `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%20%22des%22:%20%22m%22,%20%22url%22:%20%22https://wqsd.jd.com/pingou/dream_factory/index.html%22%20%7D`;
 let cookiesArr = [], cookie = '', message = '', allMessage = '';
 const inviteCodes = ['local'];
@@ -962,7 +962,7 @@ async function tuanActivity() {
   }
 }
 async function joinLeaderTuan() {
-  let res = await updateTuanIdsCDN(), res2 = await updateTuanIdsCDN("https://raw.githubusercontent.com/hajiuhajiu/jdsign1112/master/shareCodes/jd_updateFactoryTuanId.json")
+  let res = await updateTuanIdsCDN(), res2 = await updateTuanIdsCDN("https://raw.githubusercontent.com/inoyna11/jd28/master/shareCodes/jd_updateFactoryTuanId.json")
   $.authorTuanIds = [...(res && res.tuanIds || []),...(res2 && res2.tuanIds || [])]
   if ($.authorTuanIds && $.authorTuanIds.length) {
     console.log(`\n参leader团`);
@@ -1186,7 +1186,7 @@ function tuanAward(activeId, tuanId, isTuanLeader = true) {
   })
 }
 
-function updateTuanIdsCDN(url = 'https://raw.githubusercontent.com/hajiuhajiu/jdsign1112/master/shareCodes/jd_updateFactoryTuanId.json') {
+function updateTuanIdsCDN(url = 'https://raw.githubusercontent.com/inoyna11/jd28/master/shareCodes/jd_updateFactoryTuanId.json') {
   return new Promise(async resolve => {
     $.get({url,
       timeout: 200000,
@@ -1276,7 +1276,7 @@ async function showMsg() {
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: "https://gitee.com/xr2021/share/raw/master/jxfactory.json",headers:{
+    $.get({url: "https://github.com/inoyna11/jd28/raw/master/backUp/total/jxfactory.json",headers:{
       "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
     }}, async (err, resp, data) => {
       try {
@@ -1321,7 +1321,7 @@ function shareCodesFormat() {
 }
 function requireConfig() {
   return new Promise(async resolve => {
-    await updateTuanIdsCDN('https://raw.githubusercontent.com/hajiuhajiu/jdsign1112/master/shareCodes/jd_updateFactoryTuanId.json');
+    await updateTuanIdsCDN('https://raw.githubusercontent.com/inoyna11/jd28/master/shareCodes/jd_updateFactoryTuanId.json');
     if ($.tuanConfigs && $.tuanConfigs['tuanActiveId']) {
       tuanActiveId = $.tuanConfigs['tuanActiveId'];
       console.log(`拼团活动ID: 获取成功 ${tuanActiveId}`)
