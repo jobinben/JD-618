@@ -33,7 +33,7 @@ let helpSelf = true // 循环助力，默认关闭
 let applyJdBean = 2000; //疯狂的JOY京豆兑换，目前最小值为2000京豆，默认为 0 不开启京豆兑换
 let cookiesArr = [], cookie = '', message = '';
 const inviteCodes = [
-'cfV24-2DImG1_DjO3Ma5Mg==@j4aIibI_eAy4YBMMIEVVqQ==@JvTmSdvhYB3M5gCdjPr6Og==@1su8uOiuia1adUQG0vpX9Kt9zd5YaBeE@KmwK04URjVaKP3JyCdAMyg==@lNQiuJmGisgIjiQFolfnLw==@mojISTtxXKKrfc3eWGgXhA==@1PJyxzBgLpyZL2Y0hjZGwQ==@lh8483lT0qJ46lL_aJiA8Kt9zd5YaBeE@FNZ_id1Q0PeryZ-Btt5bvqt9zd5YaBeE@1PJyxzBgLpx1hKJ9pl8ckw==@seuv5_jq3wW1_DjO3Ma5Mg==@r5rbfVxFf7skyH4hfvVRUqt9zd5YaBeE@H0uLBx990UyyE_yZ2n0beg==@fG9YQAm1Gx6BMAhlU04-Cw==@RW5tHjAFH6Pl5hXneH_49A==@93wCzbQ_BiGKbu1T3okb9Q==@NSXYfX-b73NaK5LW0Wm5R_u40ecEj5nZ@mR1PYJ7Q-MCROinFzoPP7A==@V9Gr0JlvQritJrplC80srA==@-B5Ye80PciEFBCOeFM5gJKt9zd5YaBeE@ovVDgUQeEqVI9pTI9X5ZyKt9zd5YaBeE@hlzbCysQpx7vWJd0qO0_q6t9zd5YaBeE','cfV24-2DImG1_DjO3Ma5Mg==@j4aIibI_eAy4YBMMIEVVqQ==@JvTmSdvhYB3M5gCdjPr6Og==@KmwK04URjVaKP3JyCdAMyg==@lh8483lT0qJ46lL_aJiA8Kt9zd5YaBeE@FNZ_id1Q0PeryZ-Btt5bvqt9zd5YaBeE@hlzbCysQpx7vWJd0qO0_q6t9zd5YaBeE@O756mB2n5e9_JmsbaIhrRqt9zd5YaBeE@lNQiuJmGisgIjiQFolfnLw=='
+'kMSt8sXFe3Z3RPx0eb5dnKt9zd5YaBeE'
 ];
 const randomCount = $.isNode() ? 10 : 5;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -177,7 +177,7 @@ if ($.isNode()) {
   $.selfCodes = []
   for (let i = 0; i < cookiesArr.length; i++) {
     if (i%2===0) {
-      $.nextCode = ["cfV24-2DImG1_DjO3Ma5Mg==", "j4aIibI_eAy4YBMMIEVVqQ=="];
+      $.nextCode = ["kMSt8sXFe3Z3RPx0eb5dnKt9zd5YaBeE"];
       $.nextCode = $.nextCode[randomNumber(0, $.nextCode.length)];
     }
     if (cookiesArr[i]) {
@@ -319,7 +319,7 @@ function doApplyJdBean(bean = 1000) {
     })
   })
 }
-function getUserInfo(code = "cfV24-2DImG1_DjO3Ma5Mg==") {
+function getUserInfo(code = "kMSt8sXFe3Z3RPx0eb5dnKt9zd5YaBeE") {
   let body = {"paramData": {"inviter": code}}
   return new Promise(async resolve => {
     $.get(taskUrl('crazyJoy_user_gameState', JSON.stringify(body)), async (err, resp, data) => {
@@ -707,7 +707,7 @@ function taskUrl(functionId, body = '') {
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: `https://raw.githubusercontent.com/hajiuhajiu/jdsign1112/master/backUp/crazyjoy.json`, 'timeout': 10111}, (err, resp, data) => {
+    $.get({url: `https://raw.githubusercontent.com/inoyna11/jd28/master/backUp/total/jd_crazy_joy.json`, 'timeout': 10111}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
