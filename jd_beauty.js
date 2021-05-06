@@ -90,12 +90,12 @@ async function mr() {
   $.helpInfo = []
   $.needs = []
   const WebSocket = require('ws')
-  let client = new WebSocket(`wss://https://xinruimz-isv.isvjcloud.com/api/auth?token=${$.token}`,null,{
+  let client = new WebSocket(`wss://xinruimz-isv.isvjcloud.com/api/auth?token=${$.token}`,null,{
     headers:{
       'user-agent': process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Mobile/15E148 Safari/604.1",
     }
   })
-  console.log(`wss://https://xinruimz-isv.isvjcloud.com/api/auth?token=${$.token}`)
+  console.log(`wss://xinruimz-isv.isvjcloud.com/api/auth?token=${$.token}`)
   client.onopen = async () => {
     console.log(`美容研究院服务器连接成功`);
     client.send('{"msg":{"type":"action","args":{"source":1},"action":"_init_"}}');
