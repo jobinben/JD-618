@@ -1,26 +1,24 @@
-// author: 疯疯  
 /*
+author: 疯疯
 东东健康社区
-更新时间：2021-4-21
+更新时间：2021-4-22
 活动入口：京东APP首页搜索 "玩一玩"即可
 
-已支持IOS多京东账号,Node.js支持N个京东账号
 脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
-============Quantumultx===============
+===================quantumultx================
 [task_local]
 #东东健康社区
-10 0-23/4 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_health.js, tag=东东健康社区, enabled=true
+10 0-23/4 * * * https://gitee.com/lxk0301/jd_scripts/raw/master/jd_health.js, tag=东东健康社区, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 
-================Loon==============
+=====================Loon================
 [Script]
-cron "10 0-23/4 * * *" script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_health.js,tag=东东健康社区
+cron "10 0-23/4 * * *" script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_health.js, tag=东东健康社区
 
-===============Surge=================
-东东健康社区 = type=cron,cronexp="10 0-23/4 * * *",wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_health.js
+====================Surge================
+东东健康社区 = type=cron,cronexp=10 0-23/4 * * *,wake-system=1,timeout=3600,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_health.js
 
 ============小火箭=========
-东东健康社区 = type=cron,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_health.js, cronexpr="10 0-23/4 * * *", timeout=3600, enable=true
-
+东东健康社区 = type=cron,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_health.js, cronexpr="0 0,6,12,18 * * *", timeout=3600, enable=true
  */
 const $ = new Env("东东健康社区");
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
@@ -28,15 +26,15 @@ let cookiesArr = [],
   cookie = "",
   message;
 const inviteCodes = [
-  ``,
-  ``
+  ""
 ]
+const randomCount = $.isNode() ? 20 : 5;
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item]);
   });
-  if (process.env.JD_DEBUG && process.env.JD_DEBUG === "false") console.log = () => {
-  };
+  console.log(`如果出现提示 ?.data. 错误，请升级nodejs版本(进入容器后，apk add nodejs-current)`)
+  if (process.env.JD_DEBUG && process.env.JD_DEBUG === "false") console.log = () => {};
 } else {
   cookiesArr = [
     $.getdata("CookieJD"),
@@ -228,7 +226,7 @@ function taskUrl(function_id, body = {}) {
     headers: {
       "Cookie": cookie,
       "origin": "https://h5.m.jd.com",
-      "referer": "https://u.jd.com/QvrH2uA",
+      "referer": "https://h5.m.jd.com/",
       'Content-Type': 'application/x-www-form-urlencoded',
       "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
     }
@@ -251,7 +249,7 @@ function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
     $.get({
-      url: `https://raw.githubusercontent.com/inoyna11/jd28/master/backUp/total/jd_health.json`,headers:{
+      url: `https://cdn.jsdelivr.net/gh/wuzhi-docker1/RandomShareCode@main/JD_Health.json`,headers:{
         "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
       },'timeout': 10000
     }, (err, resp, data) => {
@@ -261,7 +259,7 @@ function readShareCode() {
           console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
           if (data) {
-            console.log(`随机取助力码放到您固定的互助码后面(不影响已有固定互助)`)
+            console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
             data = JSON.parse(data);
           }
         }
