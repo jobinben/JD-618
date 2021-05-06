@@ -501,7 +501,7 @@ function getToken() {
       'Content-Type': 'application/json;charset=utf-8',
       'Origin': 'https://xinruimz-isv.isvjcloud.com',
       'User-Agent': process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Mobile/15E148 Safari/604.1",
-      'Referer': 'https://xinruimz-isv.isvjcloud.com/logined_jd/',
+      'Referer': 'https://xinruimz-isv.isvjcloud.com/favicon.ico',
       'Authorization': 'Bearer undefined',
       'Cookie': `IsvToken=${$.isvToken};`
     }
