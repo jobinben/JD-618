@@ -1,7 +1,5 @@
 name: 同步
 on:
-  schedule:
-    - cron: '0 1 * 11 *'
   workflow_dispatch:
   watch:
     types: started
@@ -23,7 +21,7 @@ jobs:
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/hajiuhajiu/jdsign1112.git"
+          source_repo: "https://github.com/inoyna11/jd28.git"
           source_branch: "master"
           destination_branch: "master"
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
