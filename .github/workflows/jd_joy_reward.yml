@@ -41,7 +41,7 @@ jobs:
           python-version: 3.7
       - name: '宠汪汪换20豆'
         run: |
-              python3 wait24.py 0.1 0.1 29
+              python3 accwait.py 0.1 0.1 29
       - name: '运行'
         run: |
           node jd_joy_reward.js
