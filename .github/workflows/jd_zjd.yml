@@ -5,7 +5,8 @@ name: 步数领京豆(需配合自动步数)
 
 on:
   workflow_dispatch:
- 
+  schedule:
+    - cron: '10 8 * * *'
   watch:
     types: started
   repository_dispatch:
