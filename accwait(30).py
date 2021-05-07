@@ -6,7 +6,7 @@ import random
 
 padding = 1 # 提前时间
 interval = 1 # 区间
-minute = 29
+minute = 59
 
 if len(sys.argv) >= 2:
     padding = float(sys.argv[1])
@@ -19,7 +19,7 @@ if padding == 0 or interval == 0:
     second_setting = 0
     ms_setting = 0
 else:
-    start_time = 60 - padding - 0.5*interval
+    start_time = 30 - padding - 0.5*interval
     second_setting = int(start_time)
     ms_setting = int((start_time - second_setting)*10**6)
 
