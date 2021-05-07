@@ -6,7 +6,7 @@ import random
 
 padding = 1 # 提前时间
 interval = 1 # 区间
-minute = 59
+minute = 29
 
 if len(sys.argv) >= 2:
     padding = float(sys.argv[1])
