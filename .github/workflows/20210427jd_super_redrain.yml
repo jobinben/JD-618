@@ -42,7 +42,7 @@ jobs:
       - name: '红包雨'
         run: |
               curl https://raw.githubusercontent.com/inoyna11/jd28/master/accwait.py -o accwait.py
-              python3 accwait.py 0.1 0.1 59
+              python3 accwait(30).py 0.1 0.1 59
       - name: '运行'
         run: |
           curl https://raw.githubusercontent.com/inoyna11/jd28/master/jd_super_redrain.js -o jd_super_redrain.js
