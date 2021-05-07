@@ -37,7 +37,7 @@ jobs:
          
       - name: '测试'
         run: |
-          node jd_daily_lottery.js
+          node jd_speed_redpocke.js
          
           
         env:
