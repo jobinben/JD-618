@@ -1,9 +1,9 @@
-name: 极速版签到及红包
+name: 京东极速版
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 23,7,15 * * *'
+    - cron: '0 4,16,23 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -31,8 +31,6 @@ jobs:
       - name: '运行'
         run: |
           node jd_speed_sign.js
-          sleep 1m
-          node jd_speed_redpocke.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
