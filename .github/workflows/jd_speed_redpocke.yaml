@@ -4,7 +4,9 @@
 name: 京东极速版红包
 
 on:
-  workflow_dispatch:
+    workflow_dispatch:
+    schedule:
+        - cron: "50 4,16,23 * * *"
  
   watch:
     types: started
