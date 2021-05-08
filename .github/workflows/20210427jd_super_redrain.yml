@@ -6,7 +6,7 @@ name: 整点红包雨
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0-23/1 * * *'
+    - cron: '30 0-23/1 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -42,7 +42,7 @@ jobs:
       - name: '红包雨'
         run: |
               curl https://raw.githubusercontent.com/inoyna11/jd28/master/accwait.py -o accwait.py
-              python3 accwait.py 0.1 0.1 29
+              python3 accwait.py 0.1 0.1 59
       - name: '运行'
         run: |
           curl https://raw.githubusercontent.com/inoyna11/jd28/master/jd_super_redrain.js -o jd_super_redrain.js
