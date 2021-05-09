@@ -40,16 +40,14 @@ if ($.isNode()) {
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 const inviteCodes = [
- `AX2QI2PzOmnZQUT2ngTkV@AAzZWmKSRzjcIZ2H62H5IkQz4iQ@AUWE54cr5k0ZecB2BnBkz@AUWE5mq7FmWZdCDTx1C9JlQ@AUWE5mviVmzEIDmn823obwQ@AUWE5m_uZnDEIXWLxiC5Lkg@ATHYK1_XVlA@AWGQJxfTBhWxWCw`,
- `AX2QI2PzOmnZQUT2ngTkV@AAzZWmKSRzjcIZ2H62H5IkQz4iQ@AUWE54cr5k0ZecB2BnBkz@AUWE5mq7FmWZdCDTx1C9JlQ@AUWE5mviVmzEIDmn823obwQ@AUWE5m_uZnDEIXWLxiC5Lkg@ATHYK1_XVlA@AWGQJxfTBhWxWCw`,
+ 'S5KkcRxgY_VbTIx-llf8KJw',
 ]
 let nowTimes = new Date(new Date().getTime() + new Date().getTimezoneOffset() * 60 * 1000 + 8 * 60 * 60 * 1000);
 !(async () => {
   $.tuanList = [];
   $.authorTuanList = [];
   await requireConfig();
-  if (helpAuthor) await getAuthorShareCode('http://qr6pzoy01.hn-bkt.clouddn.com/jd_zz.json');
-  if (helpAuthor) await getAuthorShareCode('https://raw.githubusercontent.com/gitupdate/updateTeam/master/shareCodes/jd_zz.json');
+  if (helpAuthor) await getAuthorShareCode('https://raw.githubusercontent.com/inoyna11/jd28/master/jd_zz.json');
   if (!cookiesArr[0]) {
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;
