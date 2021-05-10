@@ -7,11 +7,10 @@ on:
     workflow_dispatch:
     schedule:
         - cron: "15 8 * * *"
- 
-  watch:
-    types: started
-  repository_dispatch:
-    types: jd_ETIP
+    watch:
+        types: [started]
+    repository_dispatch:
+        types: jd_ETIP
 jobs:
   build:
 
