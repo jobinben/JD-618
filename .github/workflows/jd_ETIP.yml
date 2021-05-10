@@ -4,7 +4,9 @@
 name: 无限星空
 
 on:
-  workflow_dispatch:
+    workflow_dispatch:
+    schedule:
+        - cron: "15 8 * * *"
  
   watch:
     types: started
