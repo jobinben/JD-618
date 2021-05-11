@@ -37,7 +37,7 @@ jobs:
          
       - name: '测试'
         run: |
-          node jd_speed_redpocke.js
+          node adolf_haier.js
          
           
         env:
