@@ -29,9 +29,9 @@ jobs:
         run: |
       
           node jd_unsubscribe.js
-          node jd_try.js
           sleep 5m
-          node jd_unsubscribe.js
+          node jd_try.js
+          
           
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
