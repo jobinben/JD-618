@@ -509,7 +509,7 @@ function getIsvToken() {
     headers: {
       'Host': 'api.m.jd.com',
       'accept': '*/*',
-      'user-agent': 'okhttp/3.12.1;jdmall;android;version/9.5.4;build/88136;screen/1080x2210;os/9;network/4g;',
+      'user-agent': 'JD4iPhone/167490 (iPhone; iOS 14.2; Scale/3.00)',
       'accept-language': 'zh-Hans-JP;q=1, en-JP;q=0.9, zh-Hant-TW;q=0.8, ja-JP;q=0.7, en-US;q=0.6',
       'content-type': 'application/x-www-form-urlencoded',
       'Cookie': cookie
@@ -544,7 +544,7 @@ function getIsvToken2() {
     headers: {
       'Host': 'api.m.jd.com',
       'accept': '*/*',
-      'user-agent': 'okhttp/3.12.1;jdmall;android;version/9.5.4;build/88136;screen/1080x2210;os/9;network/4g;',
+      'user-agent': 'JD4iPhone/167490 (iPhone; iOS 14.2; Scale/3.00)',
       'accept-language': 'zh-Hans-JP;q=1, en-JP;q=0.9, zh-Hant-TW;q=0.8, ja-JP;q=0.7, en-US;q=0.6',
       'content-type': 'application/x-www-form-urlencoded',
       'Cookie': cookie
@@ -631,7 +631,7 @@ function TotalBean() {
         "Connection": "keep-alive",
         "Cookie": cookie,
         "Referer": "https://wqs.jd.com/my/jingdou/my.shtml?sceneval=2",
-        "User-Agent": "jdapp;android;9.5.4;9;8363133343830343735383831373-43D2560346366666362603031393;network/4g;model/Redmi K20 Pro;addressid/3389233773;aid/fd1915d6e2b99031;oaid/db3b3022ac4f3d56;osVer/28;appBuild/88136;partner/xiaomi001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 9; Redmi K20 Pro Build/PKQ1.190616.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/045131 Mobile Safari/537.36")
+        "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1") : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
       }
     }
     $.post(options, (err, resp, data) => {
