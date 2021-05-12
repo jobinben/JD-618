@@ -37,7 +37,7 @@ jobs:
          
       - name: '测试'
         run: |
-          node adolf_haier.js
+          node jd_super_redrain.js
          
           
         env:
