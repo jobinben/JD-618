@@ -536,7 +536,7 @@ function TotalBean() {
         "Connection": "keep-alive",
         "Cookie": cookie,
         "Referer": "https://wqs.jd.com/my/jingdou/my.shtml?sceneval=2",
-        "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : "jdapp;iPhone;9.2.2;14.2;%E4%BA%AC%E4%B8%9C/9.2.2 CFNetwork/1206 Darwin/20.1.0") : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.2.2;14.2;%E4%BA%AC%E4%B8%9C/9.2.2 CFNetwork/1206 Darwin/20.1.0")
+        "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : "jdapp;android;9.5.4;9;8363133343830343735383831373-43D2560346366666362603031393;network/4g;model/Redmi K20 Pro;addressid/3389233773;aid/fd1915d6e2b99031;oaid/db3b3022ac4f3d56;osVer/28;appBuild/88136;partner/xiaomi001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 9; Redmi K20 Pro Build/PKQ1.190616.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/045131 Mobile Safari/537.36") : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;android;9.5.4;9;8363133343830343735383831373-43D2560346366666362603031393;network/4g;model/Redmi K20 Pro;addressid/3389233773;aid/fd1915d6e2b99031;oaid/db3b3022ac4f3d56;osVer/28;appBuild/88136;partner/xiaomi001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 9; Redmi K20 Pro Build/PKQ1.190616.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/045131 Mobile Safari/537.36")
       }
     }
     $.post(options, (err, resp, data) => {
