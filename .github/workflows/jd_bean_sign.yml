@@ -5,6 +5,8 @@ name: 签到
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '08 17 * * *'
  
   watch:
     types: started
@@ -35,7 +37,7 @@ jobs:
         run: |
           npm install
          
-      - name: '测试'
+      - name: '签到'
         run: |
           node jd_bean_sign.js
          
@@ -54,3 +56,5 @@ jobs:
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
+          PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }}
+          PUSH_PLUS_USER: ${{ secrets.PUSH_PLUS_USER }}
