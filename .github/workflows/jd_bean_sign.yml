@@ -5,7 +5,7 @@ name: 京豆签到脚本
 on:
   workflow_dispatch:
   schedule:
-    - cron: '35 15 * * *'
+    - cron: '35 17 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -28,11 +28,9 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.7
-      - name: '定时签到'
+      - name: '签到'
         run: |
-              python3 wait24.py 0.1 0.1 29
-      - name: '运行 【京豆定时签到脚本】'
-        run: |
+              
           node jd_bean_sign.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
