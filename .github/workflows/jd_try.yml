@@ -28,8 +28,7 @@ jobs:
       - name: '运行 【京东取关商品/新品试用】'
         run: |
       
-          node jd_unsubscribe.js
-          sleep 5m
+          
           node jd_try.js
           
           
