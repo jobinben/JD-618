@@ -65,7 +65,7 @@ jobs:
           
       - name: commit
         run: |
-          git config --global user.email 1277002811@qq.com
+          git config --global user.email 2235422332@qq.com
           git config --global user.name inoyna11
           git add .
           git commit -m "update byGithub Action" -a || echo "Nothing to update"
