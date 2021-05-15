@@ -42,7 +42,7 @@ jobs:
       - name: 'beanhome'
         run: |
               curl https://raw.githubusercontent.com/inoyna11/jd28/master/accwait.py -o accwait.py
-              python3 accwait.py 0.1 0.1 5
+              python3 accwait.py 0.1 0.1 11
       - name: '运行'
         run: |          
           node jd_updateBeanHome.js  
