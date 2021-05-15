@@ -1,9 +1,9 @@
-name: 领京豆写入
+name: 抢京豆写入
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '15 2 * * *'
+    - cron: '25 15,16,17,23,2,7 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
