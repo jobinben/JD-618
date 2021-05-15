@@ -62,7 +62,7 @@ const JD_API_HOST = 'https://api.m.jd.com/';
 function showMsg() {
   return new Promise(async resolve => {
     try {
-      await $.http.get({url: `https://raw.githubusercontent.com/1277002811/JDbot/master/shareCodes/jd_updateBeanHome.json`}).then((resp) => {
+      await $.http.get({url: `https://raw.githubusercontent.com/inoyna11/jd28/master/shareCodes/jd_updateBeanHome.json`}).then((resp) => {
         if (resp.statusCode === 200) {
           console.log(`已刷新CDN缓存`)
         } else {
