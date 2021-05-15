@@ -37,13 +37,7 @@ jobs:
           npm install
       - name: '运行脚本'
         run: |
-          random_time=$(($RANDOM % 2))
-          echo "等待 ${random_time} 分钟后开始执行"
-          for((i=1; i<=${random_time}; i++));  
-          do
-            echo "倒计时 $[${random_time}-$i] 分钟"
-            sleep 1m
-          done
+          
           node jd_bookshop.js
           sleep 5m
           node jd_car.js
