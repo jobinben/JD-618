@@ -3,7 +3,7 @@ name: 领京豆写入
 on:
   workflow_dispatch:
   schedule:
-    - cron: '15 2,3,4,5 * * *'
+    - cron: '15 2 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
