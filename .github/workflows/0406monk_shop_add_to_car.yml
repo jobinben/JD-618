@@ -18,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: hajiuhajiu/jdsign1112
+          repository: inoyna11/jd28
           ref: master
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -36,7 +36,7 @@ jobs:
           npm install
       - name: 'addtocar'
         run: |
-          #curl https://raw.githubusercontent.com/hajiuhajiu/jdsign1112/master/jd_monk_pasture.js -o jd_monk_pasture.js
+          #curl https://raw.githubusercontent.com/inoyna11/jd28/master/jd_monk_pasture.js -o jd_monk_pasture.js
           node monk_shop_add_to_car.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
