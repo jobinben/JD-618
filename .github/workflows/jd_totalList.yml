@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 排行榜+进店领豆+领京豆额外奖励+快递+摇一摇plus会员抽京豆+东东小窝
+name: 排行榜+进店领豆+领京豆额外奖励+快递+摇一摇
 
 on:
   workflow_dispatch:
@@ -26,11 +26,6 @@ jobs:
      - name: npm install
        run: |
           npm install
-     - name: Set up Python 3.7
-       uses: actions/setup-python@v2
-       with:
-          python-version: 3.7
-     - name: 阻塞运行
        run: |
          python3 wait24.py
      - name: '运行 【京东排行榜】'
@@ -44,12 +39,7 @@ jobs:
           node jd_kd.js
           sleep 10
           node jd_shake.js
-          sleep 10
-          node jd_plus_bean.js
-          sleep 10
-          node jd_small_home.js
-          
-          
+                   
        env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
