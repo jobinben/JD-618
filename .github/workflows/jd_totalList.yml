@@ -38,7 +38,7 @@ jobs:
          
       - name: '运行'
            
-       run: |
+        run: |
           node jd_rankingList.js
           sleep 5
           node jd_shop.js   
