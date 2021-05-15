@@ -5,6 +5,8 @@ name: 000000000000
 
 on:
   workflow_dispatch:
+  //schedule:
+  //  - cron: '08 16,6 * * *'
  
   watch:
     types: started
