@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 排行榜+进店领豆+领京豆额外奖励+快递+摇一摇
+name: 合集（排行榜小屋逛首页商店）
 
 on:
   workflow_dispatch:
@@ -16,29 +16,19 @@ jobs:
 
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
+   
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          repository: inoyna11/jd28
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Cache node_modules
-        uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: npm install
-        run: |
+     - uses: actions/checkout@v1
+     - name: Use Node.js 15.x
+       uses: actions/setup-node@v1
+       with:
+           node-version: 15.x 
+     - name: npm install
+       run: |
           npm install
-         
-      - name: '运行'
-           
-        run: |
+     
+     - name: '运行 【京东排行榜】'
+       run: |
           node jd_rankingList.js
           sleep 5
           node jd_shop.js   
@@ -48,7 +38,14 @@ jobs:
           node jd_kd.js
           sleep 10
           node jd_shake.js
-                   
+          sleep 10
+          node jd_plus_bean.js
+          sleep 10
+          node jd_jump_jump.js
+          sleep 10
+          node jd_small_home.js
+          
+          
        env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
