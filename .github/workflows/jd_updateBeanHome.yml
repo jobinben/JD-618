@@ -6,7 +6,7 @@ name: 20210515beanhome
 on:
   workflow_dispatch:
   schedule:
-    - cron: '25 15,16,17,23,2,7  * * *'
+    - cron: '0 15,16,17,23,2,7  * * *'
   watch:
     types: started
   repository_dispatch:
