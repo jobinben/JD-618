@@ -12,23 +12,32 @@ on:
   repository_dispatch:
     types: jd_rankingList
 jobs:
-  build:
+    build:
 
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
-   
     steps:
-     - uses: actions/checkout@v1
-     - name: Use Node.js 15.x
-       uses: actions/setup-node@v1
-       with:
-           node-version: 15.x 
-     - name: npm install
-       run: |
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          repository: inoyna11/jd28
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Cache node_modules
+        uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
+      - name: npm install
+        run: |
           npm install
-       run: |
-         python3 wait24.py
-     - name: '运行 【京东排行榜】'
+         
+      - name: '运行'
+           
        run: |
           node jd_rankingList.js
           sleep 5
