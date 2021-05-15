@@ -38,12 +38,6 @@ jobs:
           node jd_kd.js
           sleep 10
           node jd_shake.js
-          sleep 10
-          node jd_plus_bean.js
-          sleep 10
-          node jd_jump_jump.js
-          sleep 10
-          node jd_small_home.js
           
           
        env:
