@@ -2,7 +2,7 @@ name: 同步
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 1 * * *'
+    - cron: '30 22,7 * * *'
   watch:
     types: started
   repository_dispatch:
