@@ -9,7 +9,7 @@ on:
     - cron: '15 8,13,18 17-31 5'
   
   watch:
-    types: started
+    types: [started]
   repository_dispatch:
     types: 测试
 jobs:
