@@ -39,7 +39,7 @@ jobs:
          
       - name: '运行'
         run: |
-          node jd_super_redrain.js
+          node 9655_0037220adolf_pk.js
          
           
         env:
