@@ -3,7 +3,7 @@ name: 京东心愿单
 on:
   workflow_dispatch:
   schedule:
-    - cron: '15 2,3,4,5 * * *'
+    - cron: '15 2-7/1 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
