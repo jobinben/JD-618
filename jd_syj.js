@@ -721,7 +721,7 @@ function getAuthorShareCode(url) {
   })
 }
 async function getRandomCode() {
-  await $.http.get({url: `https://raw.githubusercontent.com/hajiuhajiu/jdsign1112/master/jd_zz.json`, timeout: 10000}).then(async (resp) => {
+  await $.http.get({url: `https://raw.githubusercontent.com/inoyna11/jd28/master/jd_zz.json`, timeout: 10000}).then(async (resp) => {
     if (resp.statusCode === 200) {
       try {
         let { body } = resp;
