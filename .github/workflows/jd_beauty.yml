@@ -2,8 +2,8 @@ name: 美丽研究院
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '49 15,23,4,11 * * *'
+  #schedule:
+    #- cron: '49 15,23,4,11 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
