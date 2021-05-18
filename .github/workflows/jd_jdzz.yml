@@ -5,8 +5,8 @@ name: 京东赚赚
 
 on:
   workflow_dispatch:
-  #schedule:
-    #- cron: '20 2-7/1 * * *'
+  schedule:
+    - cron: '20 2-7/1 * * *'
   watch:
     types: started
   repository_dispatch:
