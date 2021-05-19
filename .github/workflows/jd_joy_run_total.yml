@@ -5,8 +5,8 @@ name: 宠汪汪助力
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '30 7 * * *'
+  #schedule:
+    #- cron: '30 7 * * *'
   
   watch:
     types: started
