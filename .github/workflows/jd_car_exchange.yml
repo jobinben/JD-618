@@ -5,8 +5,8 @@ name: 京东汽车兑换
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '40 15 * * *'
+  #schedule:
+    #- cron: '40 15 * * *'
   watch:
     types: started
   repository_dispatch:
