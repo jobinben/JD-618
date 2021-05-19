@@ -5,8 +5,8 @@ name: 财富岛提现
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '57 15,4 * * *'
+  #schedule:
+    #- cron: '57 15,4 * * *'
   repository_dispatch:
     types: cfd
 jobs:
