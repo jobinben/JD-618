@@ -1,9 +1,9 @@
-name: 京东心愿单
+name: zjd写入
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '15 2-7/1 * * *'
+    - cron: '15 2-6/1 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
