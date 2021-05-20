@@ -7,15 +7,12 @@
  * Modify from FanchangWang https://github.com/FanchangWang
  */
 const $ = new Env('扫码获取京东cookie');
-const notify = $.isNode() ? require('./sendNotify') : '';
 const qrcode = require('qrcode-terminal');
-let s_token, cookies, guid, lsid, lstoken, okl_token, token;
-let message = '';
+let s_token, cookies, guid, lsid, lstoken, okl_token, token
 !(async () => {
   await loginEntrance();
   await generateQrcode();
   await getCookie();
-
 })()
     .catch((e) => {
       $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
@@ -57,21 +54,14 @@ function generateQrcode() {
           $.stepsHeaders = resp.headers;
           data = JSON.parse(data);
           token = data['token'];
-		  
-		  
-           //$.log('https://plogin.m.jd.com/cgi-bin/m/tmauth?appid=300&client_type=m&token=' + token)
+          // $.log('token', token)
 
           const setCookie = resp.headers['set-cookie'][0];
           okl_token = setCookie.substring(setCookie.indexOf("=") + 1, setCookie.indexOf(";"))
           const url = 'https://plogin.m.jd.com/cgi-bin/m/tmauth?appid=300&client_type=m&token=' + token;
-		  console.log("请打开 京东APP 扫码登录(二维码有效期为3分钟)");
-		  console.log("方法一：点击下面的二维码直链");
-		  $.log('https://cli.im/api/qrcode/code?text=https://plogin.m.jd.com/cgi-bin/m/tmauth?appid=300%26client_type=m%26token=' + token + '&mhid=vRbOCQztnMIhMHYsLtVRMKk')
-		  console.log("\n\n如果直链失效，请复制#下方链接#到 https://cli.im/url 生成二维码\n");
-		  $.log(url)
-          //qrcode.generate(url, {small: true}); // 输出二维码
-		  
-          
+          qrcode.generate(url, {small: true}); // 输出二维码
+          console.log("请打开 京东APP 扫码登录(二维码有效期为3分钟)");
+          console.log(`\n\n注：如扫描不到，请使用工具(例如在线二维码工具：https://cli.im)手动生成如下url二维码\n\n${url}\n\n`);
         }
       } catch (e) {
         $.logErr(e, resp)
@@ -148,11 +138,7 @@ function formatCookie(headers) {
 
     $.UserName = decodeURIComponent(cookie1.match(/pt_pin=(.+?);/) && cookie1.match(/pt_pin=(.+?);/)[1])
     $.log(`京东用户：${$.UserName} Cookie获取成功(有效期：${headers['strict-transport-security'].substring("max-age=7776000".indexOf('=') + 1, "max-age=7776000".length)}秒)，cookie如下：`);
-    //$.log(`\n${cookie1}\n`);
-	$.log(`\ncookie已通过通知发送，请查收\n`);
-		message += `Cookie如下：\n${cookie1}\n`;
-		notify.sendNotify(`京东用户：${$.UserName} Cookie获取成功` ,message);
-		//$.log(`${$.UserName} Cookie获取成功\n ${message}`);
+    $.log(`\n${cookie1}\n`);
     resolve()
   })
 }
