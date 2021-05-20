@@ -5,7 +5,7 @@ name: 粉丝互动
 on:
   workflow_dispatch:
   schedule:
-    - cron: '21 18 * * *'
+    - cron: '21 20 * * *'
   repository_dispatch:
     types: jd_fanslove
 jobs:
