@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 人头马x博朗
+name: 人头马x博朗(打开adolf_martin.js脚本，按照提示添加环境变量运行)
 
 on:
   workflow_dispatch:
