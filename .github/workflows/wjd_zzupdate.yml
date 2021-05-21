@@ -1,4 +1,4 @@
-name: zjd写入(报错的话点击Disable workfiow)
+name: jd_zzupdate(报错的话禁用即可)
 
 on:
   workflow_dispatch:
