@@ -6,7 +6,7 @@ name: 直播间抽奖(全局)
 on:
   workflow_dispatch:
   schedule:
-    - cron: '56 0,6,12 * * *'
+    - cron: '30 0,6,12 * * *'
   repository_dispatch:
     types: jd_live_lottery_social
 jobs:
