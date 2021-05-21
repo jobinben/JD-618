@@ -3,7 +3,7 @@ name: jd_zzupdate(报错的话禁用即可)
 on:
   workflow_dispatch:
   schedule:
-    - cron: '15 2-6/1 * * *'
+    - cron: '0 2-6/1 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
