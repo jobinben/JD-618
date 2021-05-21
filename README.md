@@ -13,6 +13,7 @@ Repository Name填写仓库名字，点击绿色按钮，等待导入完成。
 
 
 
+
 二:[申请PAT](https://github.com/settings/tokens/new)，Note下面框随意填写，把 repo和workflow 两部分勾上即可。
 点击最下方的创建，生成的PAT复制下来
 
