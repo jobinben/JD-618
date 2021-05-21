@@ -22,5 +22,8 @@ Repository Name填写仓库名字，点击绿色按钮，等待导入完成。
 四:点击仓库的Code，把上方的Star点亮，完毕
 
 
+QQ:2235422323
+
+
 
 lxk0301-环境变量合集（Secrets）配置[点击查看](https://github.com/inoyna11/jd28/blob/master/githubAction.md)
