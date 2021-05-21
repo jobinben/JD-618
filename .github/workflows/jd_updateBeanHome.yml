@@ -1,4 +1,4 @@
-name: 抢京豆写入
+name: qjd写入(报错的话点击Disable workfiow)
 
 on:
   workflow_dispatch:
