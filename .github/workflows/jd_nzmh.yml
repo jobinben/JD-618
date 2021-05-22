@@ -6,7 +6,7 @@ name: 女妆盲盒
 on:
   workflow_dispatch:
   schedule:
-    - cron: '35 1,23 * * *'
+    - cron: '0 17,15 * * *'
   repository_dispatch:
     types: 女妆盲盒
 jobs:
@@ -36,8 +36,6 @@ jobs:
           npm install
       - name: '女妆盲盒'
         run: |
-          #sleep 1
-          #Curl https://raw.githubusercontent.com/hajiuhajiu/jdsign1112/master/jd_monk_pasture.js -o jd_monk_pasture.js
           node jd_nzmh.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
