@@ -5,8 +5,8 @@ name: jd_updateRed()
 
 on:
    workflow_dispatch:
-   schedule:
-     - cron: '0 16,19,23,6,12 * * *'
+   #schedule:
+     #- cron: '0 16,19,23,6,12 * * *'
    repository_dispatch:
      types: jd_updateRed.js 
 jobs:
