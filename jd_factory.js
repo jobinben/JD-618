@@ -36,7 +36,7 @@ if ($.isNode()) {
 }
 let wantProduct = ``;//心仪商品名称
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-const inviteCodes = ["T0225KkcRxgY_VbTIx-llf8KJwCjVWnYaS5kRrbA"];
+const inviteCodes = ["T0124KQ2GkdM81PfCjVWnYaS5kRrbA@T019-ak0PWRKgCO3W02JyLYCjVWnYaS5kRrbA@T019-aksBmRfkjSreH-R1YQCjVWnYaS5kRrbA@T0225KkcRR9N_AGCIRP2kPZfdgCjVWnYaS5kRrbA"];
 !(async () => {
   await requireConfig();
   if (!cookiesArr[0]) {
@@ -605,7 +605,7 @@ function jdfactory_getHomeData() {
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: `https://raw.githubusercontent.com/inoyna11/jd28/master/backUp/total/jd_factory.json`, timeout: 10000}, (err, resp, data) => {
+    $.get({url: `https://raw.githubusercontent.com/hajiuhajiu/code/main/sharecode/JD_Factory.json`, timeout: 10000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
@@ -716,7 +716,7 @@ function TotalBean() {
               $.isLogin = false; //cookie过期
               return
             }
-            $.nickName = data['base'].nickname;
+            $.nickName = (data['base'] && data['base'].nickname) || $.UserName;
           } else {
             console.log(`京东服务器返回空数据`)
           }
