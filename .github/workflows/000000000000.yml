@@ -39,7 +39,7 @@ jobs:
          
       - name: '运行'
         run: |
-          node adolf_martin.js
+          node z_carnivalcity.js
          
           
         env:
