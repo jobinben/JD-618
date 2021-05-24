@@ -6,7 +6,7 @@ name: 618动物联萌
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 0-23/1 * * *'
+    - cron: '0,30 0-23/1 * * *'
   
   watch:
     types: started
