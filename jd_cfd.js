@@ -44,14 +44,14 @@ let cookiesArr = [], cookie = '', token;
          'kDunq': 'UUXpt',
          'pXMAk': '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取',
          'cxASV': 'https://bean.m.jd.com/bean/signIndex.action',
-         'dnDIo': 'https://raw.githubusercontent.com/inoyna11/jd28/master/shareCodes/cfd.json',
+         'dnDIo': 'https://raw.githubusercontent.com/inoyna11/Write-files/master/shareCodes/cfd.json',
          'Fpxcy': function(_0x1a4075, _0x6202aa) {
              return _0x1a4075 <= _0x6202aa;
          },
          'LiXuS': function(_0x2fe291, _0x25e58b) {
              return _0x2fe291(_0x25e58b);
          },
-         'uOgiE': 'https://raw.githubusercontent.com/inoyna11/jd28/master/shareCodes/cfd.json',
+         'uOgiE': 'https://raw.githubusercontent.com/inoyna11/Write-files/master/shareCodes/cfd.json',
          'JOdZO': function(_0x5a1a09, _0x214ec3) {
              return _0x5a1a09(_0x214ec3);
          },
@@ -97,7 +97,7 @@ let cookiesArr = [], cookie = '', token;
      }
      let _0x3b6899 = {},
          _0x14c33c = await _0x5557a9['UDmWB'](getAuthorShareCode, _0x5557a9['dnDIo']);
-     if (_0x5557a9['Fpxcy'](new Date()['getHours'](), 0x3)) await _0x5557a9['UDmWB'](getAuthorShareCode, 'https://raw.githubusercontent.com/inoyna11/jd28/master/shareCodes/cfd.json');
+     if (_0x5557a9['Fpxcy'](new Date()['getHours'](), 0x3)) await _0x5557a9['UDmWB'](getAuthorShareCode, 'https://raw.githubusercontent.com/inoyna11/Write-files/master/shareCodes/cfd.json');
      if (!_0x14c33c) _0x14c33c = await _0x5557a9['LiXuS'](getAuthorShareCode, _0x5557a9['uOgiE']);
      $['strMyShareIds'] = [..._0x3b6899 && _0x3b6899['shareId'] || [], ..._0x14c33c && _0x14c33c['shareId'] || []];
      $['strGroupIds'] = [..._0x3b6899 && _0x3b6899['strGroupIds'] || [], ..._0x14c33c && _0x14c33c['strGroupIds'] || []];
@@ -420,7 +420,7 @@ let cookiesArr = [], cookie = '', token;
          'KFyPc': function(_0x2d935a) {
              return _0x2d935a();
          },
-         'rmHhC': 'https://raw.githubusercontent.com/1277002811/JDbot/master/shareCodes/cfd.json',
+         'rmHhC': 'https://raw.githubusercontent.com/inoyna11/Write-files/master/shareCodes/cfd.json',
          'HEaIw': function(_0x6746f0, _0x13959e, _0x4c3961) {
              return _0x6746f0(_0x13959e, _0x4c3961);
          },
@@ -459,7 +459,7 @@ let cookiesArr = [], cookie = '', token;
      }
  }
 
- function getAuthorShareCode2(_0x4f0d87 = 'https://raw.githubusercontent.com/inoyna11/jd28/master/shareCodes/cfd.json') {
+ function getAuthorShareCode2(_0x4f0d87 = 'https://raw.githubusercontent.com/inoyna11/Write-files/master/shareCodes/cfd.json') {
      var _0x23c948 = {
          'Hmxig': function(_0x495465, _0xecdc72) {
              return _0x495465(_0xecdc72);
@@ -3099,7 +3099,7 @@ let cookiesArr = [], cookie = '', token;
      console['log']('开始');
      return new Promise(async _0xe6038b => {
          $['get']({
-             'url': 'https://raw.githubusercontent.com/1277002811/JDbot/master/shareCodes/cfd.json' + randomCount + '/',
+             'url': 'https://raw.githubusercontent.com/inoyna11/Write-files/master/shareCodes/cfd.json' + randomCount + '/',
              'timeout': 0x2710
          }, (_0x25246f, _0x365cb1, _0x535991) => {
              var _0x3b29d3 = {
