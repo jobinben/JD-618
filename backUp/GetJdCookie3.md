@@ -11,7 +11,7 @@
 3. 登陆后点击下方设置-工具箱-开发者工具-cookies,把里面的内容复制下来
 
     
-4. 按照以下格式形成自己的jd_cookie
+4. 按照以下格式形成自己的JD_COOKIE
       - 给一个京东cookie具体示例 pt_key=jdDC2F833333EFDGTCE5BD4AD1A952D4F4DF84A46052;pt_pin=jd_123456;
       - 两个京东账号cookie示例如下 pt_key=abc;pt_pin=jd_123;&pt_key=def;pt_pin=jd_456;,再多个依次类推,使用`&`或者换行隔开即可
 
