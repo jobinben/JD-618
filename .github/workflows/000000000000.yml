@@ -39,7 +39,7 @@ jobs:
          
       - name: '运行'
         run: |
-          node z_carnivalcity.js
+          node jd_jbczy.js
          
           
         env:
