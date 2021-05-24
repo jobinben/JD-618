@@ -60,3 +60,5 @@ jobs:
           PUSH_PLUS_USER: ${{ secrets.PUSH_PLUS_USER }}
           ADOLF_ADDSKU: ${{ secrets.ADOLF_ADDSKU }}
           ADOLF_MARTIN: ${{ secrets.ADOLF_MARTIN }}
+          QYWX_KEY: ${{ secrets.QYWX_KEY }}
+          QYWX_AM: ${{ secrets.QYWX_AM }}
