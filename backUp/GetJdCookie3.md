@@ -6,7 +6,7 @@
 
 1. 手机下载alook浏览器[官网下载安装](https://alookbrowser.com/)
 
-2. 安装后打开，进入[https://m.jd.com/]，选择手机验证码登陆
+2. 安装后打开，进入https://m.jd.com/选择手机验证码登陆
 
 3. 登陆后点击下方设置-工具箱-开发者工具-cookies,把里面的内容复制下来
 
