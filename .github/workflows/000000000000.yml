@@ -58,5 +58,4 @@ jobs:
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
           PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }}
           PUSH_PLUS_USER: ${{ secrets.PUSH_PLUS_USER }}
-          ADOLF_ADDSKU: ${{ secrets.ADOLF_ADDSKU }}
-          ADOLF_MARTIN: ${{ secrets.ADOLF_MARTIN }}
+          
