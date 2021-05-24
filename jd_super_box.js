@@ -205,7 +205,7 @@ function doTask(taskId,taskType,itemId) {
     "taskType":taskType,
     "channel":4,
     "itemId":itemId,
-    "linkId":"qRO6PiJnrfsIFj72ovs_FA",
+    "linkId":"xrfyA3nByKnAd7qxzmURNQ",
     "encryptPin":""
   }
   return new Promise(resolve => {
@@ -235,7 +235,7 @@ function doTask(taskId,taskType,itemId) {
   })
 }
 function drawInfo(share=true) {
-  let body = {"taskId":"","linkId":"qRO6PiJnrfsIFj72ovs_FA","encryptPin":""}
+  let body = {"taskId":"","linkId":"xrfyA3nByKnAd7qxzmURNQ","encryptPin":""}
   return new Promise(resolve => {
     $.get(taskUrl('superboxSupBoxHomePage',body), async (err, resp, data) => {
       try {
@@ -272,7 +272,7 @@ function drawInfo(share=true) {
   })
 }
 function draw() {
-  let body = {"taskId":"","linkId":"qRO6PiJnrfsIFj72ovs_FA","encryptPin":""}
+  let body = {"taskId":"","linkId":"xrfyA3nByKnAd7qxzmURNQ","encryptPin":""}
   return new Promise(resolve => {
     $.get(taskUrl('superboxOrdinaryLottery',body), async (err, resp, data) => {
       try {
@@ -308,7 +308,7 @@ function draw() {
 }
 
 function doSupport(shareId) {
-  let body = {"taskId":"116","linkId":"qRO6PiJnrfsIFj72ovs_FA","encryptPin":shareId}
+  let body = {"taskId":"116","linkId":"xrfyA3nByKnAd7qxzmURNQ","encryptPin":shareId}
   return new Promise(resolve => {
     $.get(taskUrl('superboxSupBoxHomePage',body), async (err, resp, data) => {
       try {
