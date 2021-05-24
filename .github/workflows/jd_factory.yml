@@ -52,4 +52,6 @@ jobs:
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
           DDFACTORY_SHARECODES: ${{ secrets.DDFACTORY_SHARECODES }}
+          QYWX_KEY: ${{ secrets.QYWX_KEY }}
+          QYWX_AM: ${{ secrets.QYWX_AM }}
 
