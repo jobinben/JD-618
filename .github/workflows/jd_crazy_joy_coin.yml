@@ -5,6 +5,8 @@ name: joy挂机(无收益脚本，需要的话手动运行)
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '25 4,14 * * *'
   
   watch:
     types: started
