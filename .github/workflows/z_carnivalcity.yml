@@ -6,7 +6,7 @@ name: 618手机狂欢城
 on:
   workflow_dispatch:
   schedule:
-    - cron: '2 0-23/3 * 5 *'
+    - cron: '0 16,22,4,10 * * *'
   
   watch:
     types: started
