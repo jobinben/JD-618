@@ -6,7 +6,7 @@ name: 京贴小程序
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 16,10 * * *'
+    - cron: '10 18,10 * * *'
   repository_dispatch:
     types: 京贴小程序
 jobs:
