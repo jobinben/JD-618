@@ -92,7 +92,7 @@ class sendNotify:
     def pushPlusNotify(self, text, desp):
         if self.PUSH_PLUS_TOKEN != '':
             desp = re.sub('[\n\r]', '<br>', desp, 0)
-            response = json.dumps(requests.post('http://www.pushplus.plus/send', data={
+            response = json.dumps(requests.post('http://pushplus.hxtrip.com/send', data={
                                   'token': self.PUSH_PLUS_TOKEN, 'title': text, 'content': desp, 'topic': self.PUSH_PLUS_USER}, headers={'Content-Type': 'application/json;charset=utf-8'}).json(), ensure_ascii=False)
 
     def BarkNotify(self, text, desp):
