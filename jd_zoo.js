@@ -33,7 +33,7 @@ let cookiesArr = [];
 $.cookie = '';
 $.inviteList =  [  'ZXTKT0225KkcRxgY_VbTIx-llf8KJwFjRWn6-7zx55awQ'  
 ];
-$.pkInviteList = [  'sSKNX-MpqKOJsNu_n5rRBtceMySmt64bYVo2Enx1F9d--p7NICF8sg8yP-il24I',];
+$.pkInviteList = [  'sSKNX-MpqKOJsNu_n5rRBtceMySmt64bYVo2Enx1F9d--p7NICF8sg8yP-il24E',];
 $.secretpInfo = {};
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
