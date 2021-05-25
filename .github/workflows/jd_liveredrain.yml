@@ -5,8 +5,8 @@ name: 超级直播间红包雨
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '30 0-23/1 * * *'
+  #schedule:
+    #- cron: '30 0-23/1 * * *'
   watch:
     types: started
   repository_dispatch:
