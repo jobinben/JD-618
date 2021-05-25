@@ -751,7 +751,7 @@ function updateShareCodesCDN(url = 'https://raw.githubusercontent.com/inoyna11/W
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: `http://share.turinglabs.net/api/v3/carnivalcity/query/20/`, 'timeout': 20000}, (err, resp, data) => {
+    $.get({url: `https://raw.githubusercontent.com/inoyna11/Write-files/master/shareCodes/jd_cityShareCodesm.json`, 'timeout': 20000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
