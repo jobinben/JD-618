@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Delete_workflow_runs
-        uses: smallprogram/delete-workflow-runs@master
+        uses: smallprogram/delete-workflow-runs@main
         with:
           token: ${{ secrets.PAT }}
           repository: ${{ github.repository }}
