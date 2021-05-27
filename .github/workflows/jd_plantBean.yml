@@ -6,7 +6,7 @@ name: 种豆得豆
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 23,0-13/1 * * *'
+    - cron: '1 23-14/2 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Use Node.js 10.x
         uses: actions/setup-node@v1
         with:
