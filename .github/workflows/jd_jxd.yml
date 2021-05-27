@@ -5,7 +5,7 @@ name: 京小兑
 on:
   workflow_dispatch:
   schedule:
-    - cron: '00 0,8,12 * * *'
+    - cron: '1 0 * * *'
   repository_dispatch:
     types: jd_jxd
 jobs:
@@ -36,7 +36,6 @@ jobs:
       - name: 'jd_jxd'
         run: |
           node jd_jxd.js
-          #node jd_wish.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
