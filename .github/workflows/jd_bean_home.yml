@@ -6,7 +6,7 @@ name: 全民抢京豆
 on:
   workflow_dispatch:
   schedule:
-    - cron: '15 22,12 * * *'
+    - cron: '15 22 * * *'
   
   watch:
     types: started
