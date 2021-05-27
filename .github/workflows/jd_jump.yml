@@ -6,7 +6,7 @@ name: 跳跳乐瓜分京豆
 on:
   workflow_dispatch:
   schedule:
-    - cron: '1 0-23/2 * * *'
+    - cron: '1 16,3,13 * * *'
   repository_dispatch:
     types: jd_jump
 jobs:
@@ -36,8 +36,8 @@ jobs:
           npm install
       - name: '运行'
         run: |
-          #sleep 1
-          #Curl https://raw.githubusercontent.com/hajiuhajiu/jdsign1112/master/jd_monk_pasture.js -o jd_monk_pasture.js
+       
+       
           node jd_jump.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
