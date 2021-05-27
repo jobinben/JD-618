@@ -60,4 +60,4 @@ jobs:
           PUSH_PLUS_USER: ${{ secrets.PUSH_PLUS_USER }}
           QYWX_KEY: ${{ secrets.QYWX_KEY }}
           QYWX_AM: ${{ secrets.QYWX_AM }}
-          
+          JDZZ_SHARECODES: ${{ secrets.JDZZ_SHARECODES }}
