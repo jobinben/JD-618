@@ -43,4 +43,4 @@ jobs:
           BARK_SOUND: ${{ secrets.BARK_SOUND }}
           QYWX_KEY: ${{ secrets.QYWX_KEY }}
           QYWX_AM: ${{ secrets.QYWX_AM }}
-          
+          DREAM_FACTORY_SHARE_CODES: ${{ secrets.DREAM_FACTORY_SHARE_CODES }}
