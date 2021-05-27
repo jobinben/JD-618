@@ -32,7 +32,7 @@ const pKHelpFlag = true;//是否PK助力  true 助力，false 不助力
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [];
 $.cookie = '';
-$.pkInviteList = [  'sSKNX-MpqKOJsNu_n5rRBtceMySmt64bYVo2Enx1F9d--p7NICF8sg8yP-il24E',];
+$.pkInviteList = [  'sSKNX-MpqKOJsNu_n5rRBtceMySmt64bYVo2Enx1F9d--p7NICF8sg8yP-il24A',];
 $.inviteList =  [  'ZXTKT0225KkcRxgY_VbTIx-llf8KJwFjRWn6-7zx55awQ' 
 ];
 $.secretpInfo = {};
