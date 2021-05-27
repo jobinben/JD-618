@@ -6,7 +6,7 @@ name: 店铺加购有礼
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0,1-22/6 * * *'
+    - cron: '15 4 * * *'
   repository_dispatch:
     types: monk_shop_add_to_car.js
 jobs:
@@ -36,7 +36,7 @@ jobs:
           npm install
       - name: 'addtocar'
         run: |
-          #curl https://raw.githubusercontent.com/inoyna11/jd28/master/jd_monk_pasture.js -o jd_monk_pasture.js
+        
           node monk_shop_add_to_car.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
