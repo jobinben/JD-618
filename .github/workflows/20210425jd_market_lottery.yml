@@ -6,7 +6,7 @@ name: 幸运大转盘
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 0 * * *'
+    - cron: '4 2 * * *'
   repository_dispatch:
     types: health
 jobs:
