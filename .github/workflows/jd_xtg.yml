@@ -44,7 +44,7 @@ jobs:
               python3 wait24.py 0.1 0.1 29
       - name: '运行'
         run: |
-          node adolf_star.js
+          node jd_xtg.js
          
           
         env:
