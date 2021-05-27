@@ -49,4 +49,8 @@ jobs:
           #PUSH_PLUS_USER: ${{ github.event.client_payload.PUSH_PLUS_USER || secrets.PUSH_PLUS_USER }}
           QYWX_KEY: ${{ secrets.QYWX_KEY }}
           QYWX_AM: ${{ secrets.QYWX_AM }}
+          JD_TRY_GOOD_FILTERS: ${{ secrets.JD_TRY_GOOD_FILTERS }}
+          JD_TRY_MIN_PRICE: ${{ secrets.JD_TRY_MIN_PRICE }}
+          JD_TRY_TYPE_KEYS: ${{ secrets.JD_TRY_TYPE_KEYS }}
+          JD_TRY_CIDS_KEYS: ${{ secrets.JD_TRY_CIDS_KEYS }}
       
