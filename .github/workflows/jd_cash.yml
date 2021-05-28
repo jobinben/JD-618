@@ -6,7 +6,7 @@ name: 签到领现金
 on:
   workflow_dispatch:
   schedule:
-    - cron: '21 1,15 * * *'
+    - cron: '2 0-23/4 * * *'
   repository_dispatch:
     types: jd_cash
 jobs:
