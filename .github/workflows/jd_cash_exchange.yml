@@ -5,8 +5,8 @@ name: 领现金兑换红包
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '25 15 * * *'
+  #schedule:
+    #- cron: '25 15 * * *'
   watch:
     types: started
   repository_dispatch:
