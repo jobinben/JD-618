@@ -1,4 +1,4 @@
-name: 同步
+name: 自动同步
 on:
   workflow_dispatch:
   schedule:
