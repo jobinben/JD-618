@@ -6,7 +6,7 @@ name: 618动物联萌(个别账号火爆做不了任务)
 on:
   workflow_dispatch:
   schedule:
-    - cron: '13 0-23/2 * * *'
+    - cron: '10 0-23/1 * * *'
   
   watch:
     types: started
