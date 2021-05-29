@@ -6,7 +6,7 @@ name: 金榜创造营
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 16,0,4,10 * 5-12 *'
+    - cron: '13 17,14 * * *'
   
   watch:
     types: started
@@ -39,7 +39,7 @@ jobs:
          
       - name: '运行'
         run: |
-          node jd_jbczy.js
+          node jd_gold_creator.js
          
           
         env:
