@@ -39,7 +39,7 @@ jobs:
          
       - name: '运行'
         run: |
-          node jd_car.js
+          node jd_car_exchange.js
          
           
         env:
