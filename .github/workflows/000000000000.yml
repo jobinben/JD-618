@@ -39,7 +39,7 @@ jobs:
          
       - name: '运行'
         run: |
-          node jay_freshgoods.js
+          node jd_car.js
          
           
         env:
