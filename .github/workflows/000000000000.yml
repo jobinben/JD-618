@@ -39,7 +39,7 @@ jobs:
          
       - name: '运行'
         run: |
-          node jd_xtg.js
+          node 123456.js
          
           
         env:
