@@ -483,7 +483,7 @@ async function takePostRequest(type) {
       myRequest = await getPostRequest(`zoo_bdCollectScore`,body);
       break;
     case 'qryCompositeMaterials':
-      body = `functionId=qryCompositeMaterials&body={"qryParam":"[{\\"type\\":\\"advertGroup\\",\\"mapTo\\":\\"resultData\\",\\"id\\":\\"05371960\\"}]","activityId":"2s7hhSTbhMgxpGoa9JDnbDzJTaBB","pageId":"","reqSrc":"","applyKey":"jd_star"}&client=wh5&clientVersion=1.0.0`;
+      body = `functionId=qryCompositeMaterials&body={%22qryParam%22:%22[{\%22type\%22:\%22advertGroup\%22,\%22id\%22:\%2205437898\%22,\%22mapTo\%22:\%22ds\%22}]%22,%22activityId%22:%2200940085%22,%22pageId%22:%222661031%22,%22applyKey%22:%22fashion_ued%22,%22reqSrc%22:%22mainActivity%22,%22platform%22:%22APP/m%22}&client=wh5&clientVersion=8.4.0&uuid=8363133343830343735383831373-43D2560346366666362603031393&jsonp=jsonp1000`;
       myRequest = await getPostRequest(`qryCompositeMaterials`,body);
       break;
     case 'zoo_boxShopLottery':
