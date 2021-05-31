@@ -39,7 +39,7 @@ $.pkInviteList = [];
 $.secretpInfo = {};
 $.innerPkInviteList = [
   
-  '',
+  'sSKNX-MpqKOJsNu_kcrQVV00VhTzgWUss8ZRHFK9KFngupqEGXrpNyJ1nuTqSCIV',
 
 ];
 if ($.isNode()) {
