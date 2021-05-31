@@ -13,12 +13,6 @@ on:
   repository_dispatch:
     types: 测试
 jobs:
-- job: RunsOnServer
-  pool: Server
-  steps:
-  - task: Delay@1
-    inputs:
-      delayForMinutes: '0' 
   build:
 
     runs-on: ubuntu-latest
