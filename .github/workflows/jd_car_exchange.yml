@@ -6,7 +6,7 @@ name: 京东汽车（换500豆）
 on:
   workflow_dispatch:
   schedule:
-    - cron: '19 16 * * *'
+    - cron: '19 15 * * *'
   watch:
     types: started
   repository_dispatch:
