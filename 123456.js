@@ -565,7 +565,7 @@ async function dealReturn(type, data) {
         console.log(JSON.stringify(data));
       }
       if(data.code === 0 && data.data && data.data.bizCode === -1002){
-        $.hotFlag = true;
+        $.hotFlag = false;
         console.log(`该账户脚本执行任务火爆，暂停执行任务，请手动做任务或者等待解决脚本火爆问题`)
       }
       break;
