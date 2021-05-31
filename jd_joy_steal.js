@@ -347,7 +347,7 @@ async function stealFriendCoin(friendPin) {
   // console.log(`进入好友 ${friendPin}的房间`)
   const enterFriendRoomRes = await enterFriendRoom(friendPin);
   if (enterFriendRoomRes) {
-    const { friendHomeCoin } =  enterFriendRoomRes.data;
+    const { friendHomeCoin } =  enterFriendRoomRes.data||{};
     if (friendHomeCoin > 0) {
       //领取好友积分
       console.log(`好友 ${friendPin}的房间可领取积分${friendHomeCoin}个\n`)
@@ -376,8 +376,8 @@ function enterFriendRoom(friendPin) {
           // console.log('进入好友房间', JSON.parse(data))
           if (data) {
             data = JSON.parse(data);
-            console.log(`可偷狗粮：${data.data.stealFood}`)
-            console.log(`可偷积分：${data.data.friendHomeCoin}`)
+            console.log(`可偷狗粮：${(data.data||{}).stealFood}`)
+            console.log(`可偷积分：${(data.data||{}).friendHomeCoin}`)
           } else {
             console.log(`京豆api返回数据为空，请检查自身原因`)
           }
@@ -590,7 +590,7 @@ function TotalBean() {
               $.isLogin = false; //cookie过期
               return
             }
-            $.nickName = data['base'].nickname;
+            $.nickName = (data['base']||{}).nickname;
           } else {
             console.log(`京东服务器返回空数据`)
           }
