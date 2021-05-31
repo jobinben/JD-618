@@ -1,15 +1,12 @@
 /*
- * @Author: lxk0301 https://gitee.com/lxk0301
- * @Date: 2020-08-19 16:12:40 
- * @Last Modified by: lxk0301
- * @Last Modified time: 2021-4-3 16:00:54
+ Last Modified time: 2021-4-3 16:00:54
  */
 /**
  * sendNotify 推送通知功能
  * @param text 通知头
  * @param desp 通知体
  * @param params 某些推送通知方式点击弹窗可跳转, 例：{ url: 'https://abc.com' }
- * @param author 作者仓库等信息  例：`本脚本免费使用 By：https://gitee.com/lxk0301/jd_docker`
+ * @param author 作者仓库等信息  例：`本脚本免费使用 By：xxx`
  * @returns {Promise<unknown>}
  */
 const querystring = require("querystring");
@@ -19,9 +16,7 @@ const timeout = 15000;//超时时间(单位毫秒)
 //此处填你申请的SCKEY.
 //(环境变量名 PUSH_KEY)
 let SCKEY = '';
-// =======================================QMSG酱通知设置区域===========================================
-//此处填你申请的QMSG_KEY.
-let QMSG_KEY = '';
+
 // =======================================Bark App通知设置区域===========================================
 //此处填你BarkAPP的信息(IP/设备码，例如：https://api.day.app/XXXXXXXX)
 let BARK_PUSH = '';
@@ -80,10 +75,6 @@ let PUSH_PLUS_USER = '';
 //==========================云端环境变量的判断与接收=========================
 if (process.env.PUSH_KEY) {
   SCKEY = process.env.PUSH_KEY;
-}
-
-if (process.env.QMSG_KEY) {
-  QMSG_KEY = process.env.QMSG_KEY;
 }
 
 if (process.env.QQ_SKEY) {
@@ -154,16 +145,15 @@ if (process.env.PUSH_PLUS_USER) {
  * @param text 通知头
  * @param desp 通知体
  * @param params 某些推送通知方式点击弹窗可跳转, 例：{ url: 'https://abc.com' }
- * @param author 作者仓库等信息
+ * @param author 作者仓库等信息  例：`本脚本免费使用 By：xxxx`
  * @returns {Promise<unknown>}
  */
-async function sendNotify(text, desp, params = {}, author = '') {
+async function sendNotify(text, desp, params = {}, author = '\n\n仅供用于学习') {
   //提供6种通知
   desp += author;//增加作者信息，防止被贩卖等
   await Promise.all([
     serverNotify(text, desp),//微信server酱
-    pushPlusNotify(text, desp), //pushplus(推送加)
-    qmsgNotify(text+'\n'+desp)
+    pushPlusNotify(text, desp)//pushplus(推送加)
   ])
   //由于上述两种微信通知需点击进去才能查看到详情，故text(标题内容)携带了账号序号以及昵称信息，方便不点击也可知道是哪个京东哪个活动
   text = text.match(/.*?(?=\s?-)/g) ? text.match(/.*?(?=\s?-)/g)[0] : text;
@@ -218,43 +208,6 @@ function serverNotify(text, desp, time = 2100) {
       }, time)
     } else {
       console.log('\n\n您未提供server酱的SCKEY，取消微信推送消息通知🚫\n');
-      resolve()
-    }
-  })
-}
-//396449673
-function qmsgNotify(text,time = 2100) {
-  return  new Promise(resolve => {
-    if (QMSG_KEY) {
-      const options = {
-        url: `https://qmsg.zendee.cn/send/${QMSG_KEY}`,
-        body: `msg=${text}`,
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        timeout
-      }
-      setTimeout(() => {
-        $.post(options, (err, resp, data) => {
-          try {
-            if (err) {
-              console.log('qmsg发送通知调用API失败！！\n')
-              console.log(err);
-            } else {
-              data = JSON.parse(data);
-              if (data.code === 0  ) {
-                console.log('Qmsg酱发送通知消息成功\n')
-              }
-            }
-          } catch (e) {
-            $.logErr(e, resp);
-          } finally {
-            resolve(data);
-          }
-        })
-      }, time)
-    } else {
-      console.log('\n\n您未提供Qmsg酱的KEY\n');
       resolve()
     }
   })
@@ -667,7 +620,7 @@ function iGotNotify(text, desp, params={}){
       if(!IGOT_PUSH_KEY_REGX.test(IGOT_PUSH_KEY)) {
         console.log('您所提供的IGOT_PUSH_KEY无效\n')
         resolve()
-        return
+        return 
       }
       const options = {
         url: `https://push.hellyw.com/${IGOT_PUSH_KEY.toLowerCase()}`,
@@ -714,7 +667,7 @@ function pushPlusNotify(text, desp) {
         topic: `${PUSH_PLUS_USER}`
       };
       const options = {
-        url: `http://pushplus.hxtrip.com/send`,
+        url: `http://www.pushplus.plus/send`,
         body: JSON.stringify(body),
         headers: {
           'Content-Type': ' application/json'
