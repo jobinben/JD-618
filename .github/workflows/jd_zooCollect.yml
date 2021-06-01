@@ -6,7 +6,7 @@ name: 618动物连萌收金币
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0-59/30 * * * *'
+    - cron: '0 0-23/1 * * *'
   
   watch:
     types: started
