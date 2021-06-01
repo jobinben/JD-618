@@ -5,8 +5,8 @@ name: 000000000测试脚本用
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '30 1 * * *'
+  #schedule:
+    #- cron: '30 1 * * *'
   
   watch:
     types: started
