@@ -5,8 +5,8 @@ name: 京享值pk(活动重开了)
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '15 0-23/3 2-20 6 *'
+  #schedule:
+    #- cron: '15 0-23/3 2-20 6 *'
   
   watch:
     types: [started]
