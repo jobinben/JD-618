@@ -39,7 +39,7 @@ jobs:
          
       - name: '运行'
         run: |
-          node 123456.js
+          node jd_ddaixiaochu.js
          
           
         env:
