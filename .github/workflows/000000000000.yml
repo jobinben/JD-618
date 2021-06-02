@@ -39,7 +39,7 @@ jobs:
          
       - name: '运行'
         run: |
-          node jd_ppdz.js
+          node jd_starStore.js
          
           
         env:
