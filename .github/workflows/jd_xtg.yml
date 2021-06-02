@@ -6,7 +6,7 @@ name: 618家电星推官
 on:
   workflow_dispatch:
   schedule:
-    - cron: '15 15 * 5,6 *'
+    - cron: '15 19 * 5,6 *'
   watch:
     types: started
   repository_dispatch:
