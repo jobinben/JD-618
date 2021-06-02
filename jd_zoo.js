@@ -92,11 +92,11 @@ if ($.isNode()) {
     }
   }
   let res = [], res2 = [], res3 = [];
-  res3 = await getAuthorShareCode('https://raw.githubusercontent.com/gitupdate/updateTeam/master/shareCodes/jd_zoo.json');
-  if (!res3) await getAuthorShareCode('https://cdn.jsdelivr.net/gh/gitupdate/updateTeam@master/shareCodes/jd_zoo.json')
+  res3 = await getAuthorShareCode('https://raw.githubusercontent.com/inoyna11/Write-files/master/shareCodes/jd_zoo.json');
+  if (!res3) await getAuthorShareCode('https://raw.githubusercontent.com/inoyna11/Write-files/master/shareCodes/jd_zoo.json')
   if (new Date().getHours()>= 17) {
     res = await getAuthorShareCode() || [];
-    res2 = await getAuthorShareCode('http://cdn.trueorfalse.top/e528ffae31d5407aac83b8c37a4c86bc/') || [];
+    res2 = await getAuthorShareCode('https://raw.githubusercontent.com/inoyna11/Write-files/master/shareCodes/jd_zoo.json') || [];
   }
   if (pKHelpAuthorFlag) {
     $.innerPkInviteList = getRandomArrayElements([...$.innerPkInviteList, ...res, ...res2, ...res3], [...$.innerPkInviteList, ...res, ...res2, ...res3].length);
@@ -858,7 +858,7 @@ function getRandomArrayElements(arr, count) {
   }
   return shuffled.slice(min);
 }
-function getAuthorShareCode(url = "http://cdn.annnibb.me/eb6fdc36b281b7d5eabf33396c2683a2.json") {
+function getAuthorShareCode(url = "https://raw.githubusercontent.com/inoyna11/Write-files/master/shareCodes/jd_zoo.json") {
   return new Promise(async resolve => {
     const options = {
       "url": `${url}?${new Date()}`,
