@@ -40,9 +40,8 @@ $.pkInviteList = [
 ];
 $.secretpInfo = {};
 $.innerPkInviteList = [
-  'sSKNX-MpqKOJsNu-np2LVqv2xNBizM0RkzUsiED24pNX2x4bnEVEbskw0Slwekdl',
-  'sSKNX-MpqKOJsNu8y5LZB-8tA1Vkyo1RRy4Z4iCOR2aM3xAoAr0oFajuvId-Yzog',
-  'sSKNX-MpqKOJsNu_n5rRBtceMySmt64bYVo2Enx1F9d--p7NICF8sg8yP-il24Xv',
+  
+  '',
 ];
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
@@ -94,7 +93,7 @@ if ($.isNode()) {
   let res = [], res2 = [], res3 = [];
   res3 = await getAuthorShareCode('https://raw.githubusercontent.com/inoyna11/Write-files/master/shareCodes/jd_zoo.json');
   if (!res3) await getAuthorShareCode('https://raw.githubusercontent.com/inoyna11/Write-files/master/shareCodes/jd_zoo.json')
-  if (new Date().getHours()>= 17) {
+  if (new Date().getHours()>= 9) {
     res = await getAuthorShareCode() || [];
     res2 = await getAuthorShareCode('https://raw.githubusercontent.com/inoyna11/Write-files/master/shareCodes/jd_zoo.json') || [];
   }
