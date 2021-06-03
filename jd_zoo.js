@@ -36,7 +36,8 @@ let cookiesArr = [];
 $.cookie = '';
 $.inviteList = [];
 $.pkInviteList = [
-  '',
+  'sSKNX-MpqKOJsNu_n5rRBtceMySmt64bYVo2Enx1F9d--p7NICF8sg8yP-il24Xu',
+  'sSKNX-MpqKOJsNu_yJjaViMU8sDp0LFtNuUFn1w3jOotHiS_xGt4C_mhEEZMkvD9',
 ];
 $.secretpInfo = {};
 $.innerPkInviteList = [
