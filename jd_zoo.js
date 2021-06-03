@@ -36,17 +36,11 @@ let cookiesArr = [];
 $.cookie = '';
 $.inviteList = [];
 $.pkInviteList = [
-  'sSKNX-MpqKOJsNu8y5LZB-8tA1Vkyo1RRy4Z4iCOR2aM3xAoAr0oFajuvId-Yzoh',
-  'sSKNX-MpqKOJsNu-np2LVqv2xNBizM0RkzUsiED24pNX2x4bnEVEbskw0Slwekdk',
-  'sSKNX-MpqKOLte7h3MOIXiWT8OdWoR_nJEGQIbnn1wNJA9stvoPO0PRHoUw',
-  'sSKNX-MpqKOLte7h3MOIXiWT8OBTpR_nJEGQIbnn1wM_xvI0p-8LTpWWpfM',  
+  
 ];
 $.secretpInfo = {};
 $.innerPkInviteList = [
-  'sSKNX-MpqKOJsNu8y5LZB-8tA1Vkyo1RRy4Z4iCOR2aM3xAoAr0oFajuvId-Yzoh',
-  'sSKNX-MpqKOJsNu-np2LVqv2xNBizM0RkzUsiED24pNX2x4bnEVEbskw0Slwekdk',
-  'sSKNX-MpqKOLte7h3MOIXiWT8OdWoR_nJEGQIbnn1wNJA9stvoPO0PRHoUw',
-  'sSKNX-MpqKOLte7h3MOIXiWT8OBTpR_nJEGQIbnn1wM_xvI0p-8LTpWWpfM',  
+  
 ];
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
