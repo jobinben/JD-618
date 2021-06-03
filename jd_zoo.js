@@ -36,11 +36,13 @@ let cookiesArr = [];
 $.cookie = '';
 $.inviteList = [];
 $.pkInviteList = [
-  
+  'sSKNX-MpqKOJsNu8y5LZB-8tA1Vkyo1RRy4Z4iCOR2aM3xAoAr0oFajuvId-Yzoh',
+  'sSKNX-MpqKOJsNu-np2LVqv2xNBizM0RkzUsiED24pNX2x4bnEVEbskw0Slwekdk',
 ];
 $.secretpInfo = {};
 $.innerPkInviteList = [
-  
+  'sSKNX-MpqKOJsNu8y5LZB-8tA1Vkyo1RRy4Z4iCOR2aM3xAoAr0oFajuvId-Yzoh',
+  'sSKNX-MpqKOJsNu-np2LVqv2xNBizM0RkzUsiED24pNX2x4bnEVEbskw0Slwekdk',
 ];
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
