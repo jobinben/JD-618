@@ -61,3 +61,4 @@ jobs:
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
           QYWX_KEY: ${{ secrets.QYWX_KEY }}
           QYWX_AM: ${{ secrets.QYWX_AM }}
+          JDJOY_SHARECODES: ${{ secrets.JDJOY_SHARECODES }}
