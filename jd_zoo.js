@@ -36,11 +36,11 @@ let cookiesArr = [];
 $.cookie = '';
 $.inviteList = [];
 $.pkInviteList = [
-  
+  'sSKNX-MpqKOJsNu-ypjZUmxhwN8gVGgyeWdhSAYckg_TeHPXSyLZ1Zn8Wck5Lu2D', 
 ];
 $.secretpInfo = {};
 $.innerPkInviteList = [
-  
+  'sSKNX-MpqKOJsNu-ypjZUmxhwN8gVGgyeWdhSAYckg_TeHPXSyLZ1Zn8Wck5Lu2D',
 ];
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
