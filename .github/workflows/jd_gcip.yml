@@ -5,8 +5,8 @@ name: ^京东特物国创IP
 
 on:
   workflow_dispatch:
-  #schedule:
-    #- cron: '1 18 * * *'
+  schedule:
+    - cron: '1 18 * * *'
   
   watch:
     types: started
