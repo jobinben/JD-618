@@ -5,8 +5,8 @@ name: ^京享值pk
 
 on:
   workflow_dispatch:
-  #schedule:
-    #- cron: '15 1,18 2-20 6 *'
+  schedule:
+    - cron: '15 1,10 2-20 6 *'
   
   watch:
     types: [started]
