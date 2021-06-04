@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 京喜签到+京东成长分+京东特权值
+name: 京东成长分+京东特权值
 
 on:
   workflow_dispatch:
@@ -39,8 +39,7 @@ jobs:
          
       - name: '运行'
         run: |
-          node jx_sign.js
-          sleep 10
+          
           node jdczf.js
           sleep 10
           node jdtqz.js
