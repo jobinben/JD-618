@@ -6,7 +6,7 @@ name: ^翻翻乐
 on:
   workflow_dispatch:
   schedule:
-    - cron: '1 0-23/1 * 6 *'
+    - cron: '25 0-23/2 * 6 *'
   
   watch:
     types: started
@@ -39,7 +39,7 @@ jobs:
          
       - name: '运行'
         run: |
-          node jd_flipcards.js
+          node jd_big_winner.js
          
           
         env:
