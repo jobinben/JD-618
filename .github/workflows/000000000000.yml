@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: inoyna11/jd28
+          repository: inoyna11/jd1
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -39,7 +39,7 @@ jobs:
          
       - name: '运行'
         run: |
-          node jd_beauty.js
+          node jd_zoo.js
          
           
         env:
