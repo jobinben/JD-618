@@ -1,10 +1,5 @@
 /*
- * @Author: LXK9301 https://github.com/LXK9301
- * @Date: 2021-02-19 18:54:16
- * @Last Modified by: LXK9301
- * @Last Modified time: 2021-2-19 10:22:37
- */
-/*
+Last Modified time: 2021-6-6 10:22:37
 活动入口：京东APP我的-更多工具-宠汪汪
 最近经常出现给偷好友积分与狗粮失败的情况，故建议cron设置为多次
 jd宠汪汪偷好友积分与狗粮,及给好友喂食
@@ -47,18 +42,12 @@ if ($.isNode()) {
   })
   if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => {};
 } else {
-  let cookiesData = $.getdata('CookiesJD') || "[]";
-  cookiesData = jsonParse(cookiesData);
-  cookiesArr = cookiesData.map(item => item.cookie);
-  cookiesArr.reverse();
-  cookiesArr.push(...[$.getdata('CookieJD2'), $.getdata('CookieJD')]);
-  cookiesArr.reverse();
-  cookiesArr = cookiesArr.filter(item => item !== "" && item !== null && item !== undefined);
+  cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 let message = '', subTitle = '';
 
 let jdNotify = false;//是否开启静默运行，false关闭静默运行(即通知)，true打开静默运行(即不通知)
-let jdJoyHelpFeed = true;//是否给好友喂食，false为不给喂食，true为给好友喂食，默认不给好友喂食
+let jdJoyHelpFeed = true;//是否给好友喂食，false为不给喂食，true为给好友喂食，默认给好友喂食
 let jdJoyStealCoin = true;//是否偷好友积分与狗粮，false为否，true为是，默认是偷
 const JD_API_HOST = 'https://jdjoy.jd.com/pet';
 //是否给好友喂食
@@ -145,7 +134,7 @@ async function jdJoySteal() {
           console.log(`偷好友积分 开始查询第${i}页好友\n`);
           await getFriends(i);
           $.allFriends = $.getFriendsData.datas;
-          await stealFriendCoinFun();
+          if ($.allFriends) await stealFriendCoinFun();
         }
         for (let i = 1; i <= new Array(lastPage).fill('').length; i++) {
           if ($.stealStatus === 'chance_full') {
@@ -155,7 +144,7 @@ async function jdJoySteal() {
             }
             break
           }
-          if (nowTimes.getHours() < 6 && nowTimes.getHours() > 0) {
+          if (nowTimes.getHours() < 6 && nowTimes.getHours() >= 0) {
             $.log('未到早餐时间, 暂不能偷好友狗粮\n')
             break
           }
@@ -174,7 +163,7 @@ async function jdJoySteal() {
           console.log(`偷好友狗粮 开始查询第${i}页好友\n`);
           await getFriends(i);
           $.allFriends = $.getFriendsData.datas;
-          await stealFriendsFood();
+          if ($.allFriends) await stealFriendsFood();
         }
         for (let i = 1; i <= new Array(lastPage).fill('').length; i++) {
           if ($.help_feed >= 200 || ($.helpFeedStatus && $.helpFeedStatus === 'chance_full')) {
@@ -194,7 +183,7 @@ async function jdJoySteal() {
           console.log(`帮好友喂食 开始查询第${i}页好友\n`);
           await getFriends(i);
           $.allFriends = $.getFriendsData.datas;
-          await helpFriendsFeed();
+          if ($.allFriends) await helpFriendsFeed();
         }
       }
     } else {
@@ -297,9 +286,8 @@ async function helpFriendsFeed() {
 function getFriends(currentPage = '1') {
   return new Promise(resolve => {
     let opt = {
-      url: `//jdjoy.jd.com/common/pet/h5/getFriends?itemsPerPage=20&currentPage=${currentPage * 1}&reqSource=h5`,
-      //url: `//jdjoy.jd.com/common/pet/getFriends?itemsPerPage=20&currentPage=${currentPage * 1}&reqSource=h5`,
-      // url: `//draw.jdfcloud.com/common/pet/getPetTaskConfig?reqSource=h5`,
+      url: `//draw.jdfcloud.com//common/pet/api/getFriends?itemsPerPage=20&currentPage=${currentPage * 1}&reqSource=weapp`,
+      // url: `//draw.jdfcloud.com/common/pet/getPetTaskConfig?reqSource=h5&invokeKey=Oex5GmEuqGep1WLC`,
       method: "GET",
       data: {},
       credentials: "include",
@@ -311,11 +299,11 @@ function getFriends(currentPage = '1') {
       headers: {
         'Cookie': cookie,
         'reqSource': 'h5',
-        'Host': 'jdjoy.jd.com',
+        'Host': 'draw.jdfcloud.com',
         'Connection': 'keep-alive',
         'Content-Type': 'application/json',
         'Referer': 'https://jdjoy.jd.com/pet/index',
-        'User-Agent': $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.2.2;14.2;%E4%BA%AC%E4%B8%9C/9.2.2 CFNetwork/1206 Darwin/20.1.0"),
+        'User-Agent': $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
         'Accept-Language': 'zh-cn',
         'Accept-Encoding': 'gzip, deflate, br',
       },
@@ -347,7 +335,7 @@ async function stealFriendCoin(friendPin) {
   // console.log(`进入好友 ${friendPin}的房间`)
   const enterFriendRoomRes = await enterFriendRoom(friendPin);
   if (enterFriendRoomRes) {
-    const { friendHomeCoin } =  enterFriendRoomRes.data||{};
+    const { friendHomeCoin } =  enterFriendRoomRes.data;
     if (friendHomeCoin > 0) {
       //领取好友积分
       console.log(`好友 ${friendPin}的房间可领取积分${friendHomeCoin}个\n`)
@@ -376,8 +364,8 @@ function enterFriendRoom(friendPin) {
           // console.log('进入好友房间', JSON.parse(data))
           if (data) {
             data = JSON.parse(data);
-            console.log(`可偷狗粮：${(data.data||{}).stealFood}`)
-            console.log(`可偷积分：${(data.data||{}).friendHomeCoin}`)
+            console.log(`可偷狗粮：${data.data.stealFood}`)
+            console.log(`可偷积分：${data.data.friendHomeCoin}`)
           } else {
             console.log(`京豆api返回数据为空，请检查自身原因`)
           }
@@ -484,7 +472,7 @@ function getRandomFood(friendPin) {
 function getCoinChanges() {
   return new Promise(resolve => {
     let opt = {
-      url: `//jdjoy.jd.com/common/pet/getCoinChanges?changeDate=${Date.now()}&reqSource=h5`,
+      url: `//jdjoy.jd.com/common/pet/getCoinChanges?changeDate=${Date.now()}&reqSource=h5&invokeKey=Oex5GmEuqGep1WLC`,
       // url: "//draw.jdfcloud.com/common/pet/getPetTaskConfig?reqSource=h5",
       method: "GET",
       data: {},
@@ -501,7 +489,7 @@ function getCoinChanges() {
         'Connection': 'keep-alive',
         'Content-Type': 'application/json',
         'Referer': 'https://jdjoy.jd.com/pet/index',
-        'User-Agent': $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.2.2;14.2;%E4%BA%AC%E4%B8%9C/9.2.2 CFNetwork/1206 Darwin/20.1.0"),
+        'User-Agent': $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
         'Accept-Language': 'zh-cn',
         'Accept-Encoding': 'gzip, deflate, br',
       }
@@ -575,7 +563,7 @@ function TotalBean() {
         "Connection": "keep-alive",
         "Cookie": cookie,
         "Referer": "https://wqs.jd.com/my/jingdou/my.shtml?sceneval=2",
-        "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.2.2;14.2;%E4%BA%AC%E4%B8%9C/9.2.2 CFNetwork/1206 Darwin/20.1.0")
+        "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
       }
     }
     $.post(options, (err, resp, data) => {
@@ -590,7 +578,11 @@ function TotalBean() {
               $.isLogin = false; //cookie过期
               return
             }
-            $.nickName = (data['base'] && data['base'].nickname) || $.UserName;
+            if (data['retcode'] === 0) {
+              $.nickName = (data['base'] && data['base'].nickname) || $.UserName;
+            } else {
+              $.nickName = $.UserName
+            }
           } else {
             console.log(`京东服务器返回空数据`)
           }
@@ -605,7 +597,7 @@ function TotalBean() {
 }
 function taskUrl(functionId, friendPin) {
   let opt = {
-    url: `//jdjoy.jd.com/common/pet/${functionId}?friendPin=${encodeURI(friendPin)}&reqSource=h5`,
+    url: `//jdjoy.jd.com/common/pet/${functionId}?friendPin=${encodeURI(friendPin)}&reqSource=h5&invokeKey=Oex5GmEuqGep1WLC`,
     // url: `//draw.jdfcloud.com/common/pet/getPetTaskConfig?reqSource=h5`,
     method: "GET",
     data: {},
@@ -622,7 +614,7 @@ function taskUrl(functionId, friendPin) {
       'Connection': 'keep-alive',
       'Content-Type': 'application/json',
       'Referer': 'https://jdjoy.jd.com/pet/index',
-      'User-Agent': $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.2.2;14.2;%E4%BA%AC%E4%B8%9C/9.2.2 CFNetwork/1206 Darwin/20.1.0"),
+      'User-Agent': $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
       'Accept-Language': 'zh-cn',
       'Accept-Encoding': 'gzip, deflate, br',
     }
