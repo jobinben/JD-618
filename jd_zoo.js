@@ -87,8 +87,8 @@ if ($.isNode()) {
     }
   }
   let res = [], res2 = [], res3 = [];
-  res3 = await getAuthorShareCode('https://raw.githubusercontent.com/inoyna11/Write-files/master/shareCodes/jd_zoo.json');
-  if (!res3) await getAuthorShareCode('https://raw.githubusercontent.com/inoyna11/Write-files/master/shareCodes/jd_zoo.json')
+  res3 = await getAuthorShareCode('https://gitee.com/jay_chojfjfjf/share-codes/raw/master/jd_zoo.json');
+  if (!res3) await getAuthorShareCode('https://gitee.com/jay_chojfjfjf/share-codes/raw/master/jd_zoo.json')
   if (new Date().getUTCHours() + 8 >= 9) {
     res = await getAuthorShareCode() || [];
     res2 = await getAuthorShareCode('https://gitee.com/xr2021/share/raw/master/pk.json') || [];
