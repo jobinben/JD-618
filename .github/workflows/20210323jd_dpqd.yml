@@ -27,11 +27,11 @@ jobs:
           npm install
       - name: '运行 【店铺签到】'
         run: |
-          curl https://raw.githubusercontent.com/inoyna11/jd28/master/jd_dpqd.js -o jd_dpqd.js
+          #curl https://raw.githubusercontent.com/inoyna11/jd28/master/jd_dpqd.js -o jd_dpqd.js
           node jd_dpqd.js
-          curl https://raw.githubusercontent.com/inoyna11/jd28/master/jd_dpqd2.js -o jd_dpqd2.js
+          #curl https://raw.githubusercontent.com/inoyna11/jd28/master/jd_dpqd2.js -o jd_dpqd2.js
           node jd_dpqd2.js
-          curl https://raw.githubusercontent.com/inoyna11/jd28/master/jd_ShopSign.js -o jd_ShopSign.js
+          #curl https://raw.githubusercontent.com/inoyna11/jd28/master/jd_ShopSign.js -o jd_ShopSign.js
           node jd_ShopSign.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
