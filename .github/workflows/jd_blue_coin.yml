@@ -43,7 +43,7 @@ jobs:
               python3 wait24.py 0.1 0.1 29
       - name: '运行'
         run: |
-          node jd_blueCoin20.js
+          node jd_blueCoin.js
          
           
         env:
