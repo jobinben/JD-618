@@ -1,12 +1,12 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 排行榜+进店领豆+京东快递+京东汽车
+name: 排行榜+进店领豆+京东快递+京东汽车+领京豆额外奖励
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 17 * * *'
+    - cron: '30 0 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -36,6 +36,8 @@ jobs:
           node jd_kd.js
           sleep 10
           node jd_car.js
+          sleep 10
+          node jd_bean_home.js
           
           
        env:
