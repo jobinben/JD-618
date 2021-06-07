@@ -6,7 +6,7 @@ name: 京喜工厂
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0-23/1 * * *'
+    - cron: '40 0-23/1 * * *'
   repository_dispatch:
     types: jd_jxfactory
 jobs:
@@ -28,6 +28,8 @@ jobs:
        run: |
           
           node jd_jxfactory.js
+          sleep 10
+          node 123456.js
        env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           PUSH_PLUS_TOKEN: ${{ github.event.client_payload.PUSH_PLUS_TOKEN || secrets.PUSH_PLUS_TOKEN }}
