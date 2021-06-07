@@ -6,7 +6,7 @@ name: ^翻翻乐
 on:
   workflow_dispatch:
   schedule:
-    - cron: '25 0-23/2 * 6 *'
+    - cron: '25 0-23/1 * 6 *'
   
   watch:
     types: started
