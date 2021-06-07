@@ -1,12 +1,12 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 618动物连萌收金币
+name: 动物连萌收金币
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0-23/1 * * *'
+    - cron: '0,30 0-23/1 * * *'
   
   watch:
     types: started
@@ -39,6 +39,8 @@ jobs:
       - name: '运行'
         run: |
           node jd_zooCollect.js
+          sleep 10
+          node 123456.js
          
           
         env:
