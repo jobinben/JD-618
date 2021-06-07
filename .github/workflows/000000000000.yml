@@ -39,7 +39,7 @@ jobs:
          
       - name: '运行'
         run: |
-          node jd_joy_reward.js
+          node jd_blueCoin.js
          
           
         env:
